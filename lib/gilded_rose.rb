@@ -5,10 +5,6 @@ class GildedRose
     @items = items
   end
 
-  def normal_item_name
-    item.name
-  end
-
   def normal_update(item)
     item.sell_in -= 1
     return if item.quality == 0
@@ -17,9 +13,21 @@ class GildedRose
     item.quality -= 1 if item.sell_in <= 0
   end
 
+  def aged_brie_update(item)
+    item.sell_in -= 1
+    return if item.quality == 50
+
+    item.quality += 1
+    item.quality += 1 if item.sell_in <= 0
+  end
+
   def update_quality
     @items.each do |item|
-      normal_update(item) if item.name = 'foo'
+      if item.name == 'foo'
+        normal_update(item)
+      elsif item.name == 'Aged Brie'
+        aged_brie_update(item)
+      end
     end
   end
 
