@@ -3,8 +3,8 @@
 class Normal
   attr_reader :name, :sell_in, :quality
 
-  def initialize(name, sell_in, quality)
-    @name = name
+  def initialize(sell_in, quality)
+    @name = 'foo'
     @sell_in = sell_in
     @quality = quality
   end

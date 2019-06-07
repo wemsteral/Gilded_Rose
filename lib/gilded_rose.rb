@@ -1,5 +1,7 @@
 # frozen_string_literal: true
 
+require_relative 'normal'
+
 class GildedRose
   def initialize(items)
     @items = items
@@ -33,8 +35,8 @@ class GildedRose
 
   def update_quality
     @items.each do |item|
-      if item.name == 'foo' # add method for assessing normal names here
-        normal_update(item)
+      if item.name == 'foo' # add method for assessing normal names?
+        item.update
       elsif item.name == 'Aged Brie'
         aged_brie_update(item)
       elsif item.name == 'Backstage passes to a TAFKAL80ETC concert'
