@@ -2,39 +2,17 @@
 
 require_relative 'normal'
 require_relative 'aged_brie'
+require_relative 'backstage_pass'
 
 class GildedRose
   def initialize(items)
     @items = items
   end
 
-  # def normal_update(item)
-  #   item.sell_in -= 1
-  #   return if item.quality == 0
-  #
-  #   item.quality -= 1
-  #   item.quality -= 1 if item.sell_in <= 0
-  # end
-
-  def backstage_pass_update(item)
-    item.sell_in -= 1
-    return if item.quality == 0
-
-    item.quality += 1
-    item.quality += 1 if item.sell_in <= 10
-    item.quality += 1 if item.sell_in < 5
-    item.quality = 0 if item.sell_in < 0
-  end
-
   def update_quality
     @items.each do |item|
-      if item.name == 'foo' # add method for assessing normal names?
-        item.update
-      elsif item.name == 'Aged Brie'
-        item.update
-      elsif item.name == 'Backstage passes to a TAFKAL80ETC concert'
-        backstage_pass_update(item)
-      end
+      puts item.name
+      item.update
     end
   end
 end

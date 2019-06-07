@@ -13,11 +13,11 @@ items = [
   Normal.new('Elixir of the Mongoose', 5, 7),
   Sulfuras.new(0, 80),
   Sulfuras.new(-1, 80),
-  Item.new(name = 'Backstage passes to a TAFKAL80ETC concert', sell_in = 15, quality = 20),
-  Item.new(name = 'Backstage passes to a TAFKAL80ETC concert', sell_in = 10, quality = 49),
-  Item.new(name = 'Backstage passes to a TAFKAL80ETC concert', sell_in = 5, quality = 49),
+  BackStagePass.new(name = 'Backstage passes to a TAFKAL80ETC concert', sell_in = 15, quality = 20),
+  BackStagePass.new(name = 'Backstage passes to a TAFKAL80ETC concert', sell_in = 10, quality = 49),
+  BackStagePass.new(name = 'Backstage passes to a TAFKAL80ETC concert', sell_in = 5, quality = 49),
   # This Conjured item does not work properly yet
-  Item.new(name = 'Conjured Mana Cake', sell_in = 3, quality = 6) # <-- :O
+  Normal.new(name = 'Conjured Mana Cake', sell_in = 3, quality = 6) # <-- :O
 ]
 
 days = 2
