@@ -2,12 +2,14 @@
 # frozen_string_literal: true
 
 require './lib/gilded_rose.rb'
+require './lib/normal.rb'
+require './lib/aged_brie.rb'
 
 puts 'OMGHAI!'
 items = [
-  Item.new(name = '+5 Dexterity Vest', sell_in = 10, quality = 20),
-  Item.new(name = 'Aged Brie', sell_in = 2, quality = 0),
-  Item.new(name = 'Elixir of the Mongoose', sell_in = 5, quality = 7),
+  Normal.new(10, 20),
+  AgedBrie.new(2, 0),
+  Normal.new(5, 7),
   Item.new(name = 'Sulfuras, Hand of Ragnaros', sell_in = 0, quality = 80),
   Item.new(name = 'Sulfuras, Hand of Ragnaros', sell_in = -1, quality = 80),
   Item.new(name = 'Backstage passes to a TAFKAL80ETC concert', sell_in = 15, quality = 20),

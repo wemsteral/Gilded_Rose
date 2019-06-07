@@ -1,6 +1,7 @@
 # frozen_string_literal: true
 
 require_relative 'normal'
+require_relative 'aged_brie'
 
 class GildedRose
   def initialize(items)
@@ -14,14 +15,6 @@ class GildedRose
   #   item.quality -= 1
   #   item.quality -= 1 if item.sell_in <= 0
   # end
-
-  def aged_brie_update(item)
-    item.sell_in -= 1
-    return if item.quality == 50
-
-    item.quality += 1
-    item.quality += 1 if item.sell_in <= 0
-  end
 
   def backstage_pass_update(item)
     item.sell_in -= 1
@@ -38,7 +31,7 @@ class GildedRose
       if item.name == 'foo' # add method for assessing normal names?
         item.update
       elsif item.name == 'Aged Brie'
-        aged_brie_update(item)
+        item.update
       elsif item.name == 'Backstage passes to a TAFKAL80ETC concert'
         backstage_pass_update(item)
       end
