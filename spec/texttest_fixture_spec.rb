@@ -4,14 +4,15 @@
 require './lib/gilded_rose.rb'
 require './lib/normal.rb'
 require './lib/aged_brie.rb'
+require './lib/sulfuras.rb'
 
 puts 'OMGHAI!'
 items = [
-  Normal.new(10, 20),
+  Normal.new('AK47', 10, 20),
   AgedBrie.new(2, 0),
-  Normal.new(5, 7),
-  Item.new(name = 'Sulfuras, Hand of Ragnaros', sell_in = 0, quality = 80),
-  Item.new(name = 'Sulfuras, Hand of Ragnaros', sell_in = -1, quality = 80),
+  Normal.new('Elixir of the Mongoose', 5, 7),
+  Sulfuras.new(0, 80),
+  Sulfuras.new(-1, 80),
   Item.new(name = 'Backstage passes to a TAFKAL80ETC concert', sell_in = 15, quality = 20),
   Item.new(name = 'Backstage passes to a TAFKAL80ETC concert', sell_in = 10, quality = 49),
   Item.new(name = 'Backstage passes to a TAFKAL80ETC concert', sell_in = 5, quality = 49),
@@ -27,7 +28,7 @@ gilded_rose = GildedRose.new items
   puts "-------- day #{day} --------"
   puts 'name, sellIn, quality'
   items.each do |item|
-    puts item
+    puts item.name
   end
   puts ''
   gilded_rose.update_quality
