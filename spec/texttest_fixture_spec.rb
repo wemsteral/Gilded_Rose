@@ -8,16 +8,16 @@ require './lib/sulfuras.rb'
 
 puts 'OMGHAI!'
 items = [
-  Normal.new('AK47', 10, 20),
-  AgedBrie.new(2, 0),
-  Normal.new('Elixir of the Mongoose', 5, 7),
-  Sulfuras.new(0, 80),
-  Sulfuras.new(-1, 80),
-  BackStagePass.new(name = 'Backstage passes to a TAFKAL80ETC concert', sell_in = 15, quality = 20),
-  BackStagePass.new(name = 'Backstage passes to a TAFKAL80ETC concert', sell_in = 10, quality = 49),
-  BackStagePass.new(name = 'Backstage passes to a TAFKAL80ETC concert', sell_in = 5, quality = 49),
+  Item.new('AK47', 10, 20),
+  Item.new('Aged Brie', 2, 0),
+  Item.new('Elixir of the Mongoose', 5, 7),
+  Item.new('Sulfuras, Hand of Ragnaros', 0, 80),
+  Item.new('Sulfuras, Hand of Ragnaros', -1, 80),
+  Item.new('Backstage passes to a TAFKAL80ETC concert', 15, 20),
+  Item.new('Backstage passes to a TAFKAL80ETC concert', 10, 49),
+  Item.new('Backstage passes to a TAFKAL80ETC concert', 5, 49),
   # This Conjured item does not work properly yet
-  Normal.new(name = 'Conjured Mana Cake', sell_in = 3, quality = 6) # <-- :O
+  Item.new('Conjured Mana Cake', 3, 6) # <-- :O
 ]
 
 days = 2
@@ -27,8 +27,8 @@ gilded_rose = GildedRose.new items
 (0...days).each do |day|
   puts "-------- day #{day} --------"
   puts 'name, sellIn, quality'
-  items.each do |item|
-    puts item.name
+  gilded_rose.items.each do |item|
+    puts item.to_s
   end
   puts ''
   gilded_rose.update_quality

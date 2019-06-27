@@ -1,13 +1,8 @@
 # frozen_string_literal: true
 
-class Sulfuras
-  attr_reader :name, :sell_in, :quality
+require_relative 'gilded_rose'
+require_relative 'item'
 
-  def initialize(sell_in, quality)
-    @name = 'Sulfuras, Hand of Ragnaros'
-    @sell_in = sell_in
-    @quality = quality
-  end
-
+class Sulfuras < Item
   def update; end
 end

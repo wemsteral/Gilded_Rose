@@ -1,32 +1,30 @@
 # frozen_string_literal: true
 
+require_relative 'item'
 require_relative 'normal'
 require_relative 'aged_brie'
 require_relative 'backstage_pass'
+require_relative 'sulfuras'
 
 class GildedRose
+  attr_reader :items
   def initialize(items)
-    @items = items
+    @items = items.map! { |x| get_item_type(x.name).new(x.name, x.sell_in, x.quality) }
+end
+
+  def get_item_type(name)
+    if name == 'Aged Brie'
+      AgedBrie
+    elsif name == 'Backstage passes to a TAFKAL80ETC concert'
+      BackStagePass
+    elsif name == 'Sulfuras, Hand of Ragnaros'
+      Sulfuras
+    else
+      Normal
+    end
   end
 
   def update_quality
-    @items.each do |item|
-      puts item.name
-      item.update
-    end
-  end
-end
-
-class Item
-  attr_accessor :name, :sell_in, :quality
-
-  def initialize(name, sell_in, quality)
-    @name = name
-    @sell_in = sell_in
-    @quality = quality
-  end
-
-  def to_s
-    "#{@name}, #{@sell_in}, #{@quality}"
+    @items.each(&:update)
   end
 end

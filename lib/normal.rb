@@ -1,14 +1,9 @@
 # frozen_string_literal: true
 
-class Normal
-  attr_reader :name, :sell_in, :quality
+require_relative 'gilded_rose'
+require_relative 'item'
 
-  def initialize(name = 'foo', sell_in, quality)
-    @name = name
-    @sell_in = sell_in
-    @quality = quality
-  end
-
+class Normal < Item
   def update
     @sell_in -= 1
     return if @quality == 0
