@@ -5,6 +5,7 @@ require_relative 'normal'
 require_relative 'aged_brie'
 require_relative 'backstage_pass'
 require_relative 'sulfuras'
+require_relative 'conjured'
 
 class GildedRose
   attr_reader :items
@@ -19,6 +20,8 @@ end
       BackStagePass
     elsif name == 'Sulfuras, Hand of Ragnaros'
       Sulfuras
+    elsif name == 'Conjured Mana Cake'
+      Conjured
     else
       Normal
     end
