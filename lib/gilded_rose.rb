@@ -11,7 +11,7 @@ class GildedRose
   attr_reader :items
   def initialize(items)
     @items = items.map! { |x| get_item_type(x.name).new(x.name, x.sell_in, x.quality) }
-end
+  end
 
   def get_item_type(name)
     if name == 'Aged Brie'
