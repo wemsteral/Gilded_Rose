@@ -43,6 +43,8 @@ HINT: Test first FTW!
 8. Spotted repetition across item types ('Aged Brie', 'BackStagePass' etc etc) and between those and the 'Item' class, I allowed those sub-classes to inherit from 'Item' and strip out all the behaviour that 'Item' can handle. This meant just leaving an 'update method' in each class which overrides the update method in the parent (exception: Sulfuras, which has no method within it and relies on an empty 'update' method within 'Item'.)
    n.b. I consciously kept 'Sulfuras' as a class (didn't _need_ to) for consistency, readability and extendability.
 9. I added unit tests for the new classes.
+10. Tested for and added conjured class with appropriate update method.
+
 
 ## Getting started
 
